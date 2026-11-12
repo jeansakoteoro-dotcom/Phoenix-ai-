@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHÉNIX AI - Music Studio</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0b0615;
+color:white;
+}
+
+header{
+text-align:center;
+padding:30px 15px;
+background:linear-gradient(135deg,#230044,#080511);
+}
+
+.logo{
+font-size:35px;
+font-weight:bold;
+color:#e0aaff;
+}
+
+header p{color:#ddd}
+
+.container{
+max-width:500px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:#1b1029;
+border:1px solid #583477;
+border-radius:20px;
+padding:22px;
+}
+
+h2{color:#e6b4ff}
+
+label{
+display:block;
+margin:17px 0 8px;
+}
+
+textarea,select{
+width:100%;
+padding:14px;
+border-radius:12px;
+background:#100a19;
+border:1px solid #68458a;
+color:white;
+font-size:15px;
+}
+
+textarea{
+height:120px;
+resize:vertical;
+}
+
+button{
+width:100%;
+padding:16px;
+margin-top:22px;
+border:0;
+border-radius:30px;
+background:linear-gradient(90deg,#8434d7,#d13cff);
+color:white;
+font-size:17px;
+font-weight:bold;
+}
+
+#result{
+display:none;
+margin-top:20px;
+padding:18px;
+background:#28153b;
+border-radius:15px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#aaa;
+font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">🔥 PHÉNIX AI</div>
+<p>Transformez vos idées en chansons</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>🎵 Créer une chanson</h2>
+
+<label>Décris ta chanson</label>
+<textarea id="description"
+placeholder="Exemple : Une chanson d'amour pour ma femme..."></textarea>
+
+<label>Style musical</label>
+<select id="style">
+<option>Afrobeat</option>
+<option>Gospel</option>
+<option>Rap</option>
+<option>Reggae</option>
+<option>Zouglou</option>
+<option>Pop</option>
+<option>R&B</option>
+</select>
+
+<label>Langue</label>
+<select id="langue">
+<option>Français</option>
+<option>Anglais</option>
+<option>Soussou</option>
+<option>Kissi</option>
+<option>Loma</option>
+</select>
+
+<label>Type de voix</label>
+<select id="voix">
+<option>Masculine</option>
+<option>Féminine</option>
+</select>
+
+<label>Ambiance</label>
+<select id="ambiance">
+<option>Romantique</option>
+<option>Émotionnelle</option>
+<option>Joyeuse</option>
+<option>Motivante</option>
+<option>Spirituelle</option>
+</select>
+
+<button onclick="generer()">
+✨ GÉNÉRER MA CHANSON
+</button>
+
+<div id="result">
+<h3>🎵 Demande enregistrée !</h3>
+<p id="details"></p>
+<p>Le moteur musical IA sera connecté dans la prochaine version.</p>
+</div>
+
+</div>
+</div>
+
+<footer>
+PHÉNIX AI © 2026<br>
+Créez • Écoutez • Partagez
+</footer>
+
+<script>
+function generer(){
+
+let description =
+document.getElementById("description").value;
+
+if(description.trim()===""){
+alert("Décris d'abord ta chanson !");
+return;
+}
+
+let style=document.getElementById("style").value;
+let langue=document.getElementById("langue").value;
+let voix=document.getElementById("voix").value;
+let ambiance=document.getElementById("ambiance").value;
+
+document.getElementById("details").innerHTML=
+"Description : "+description+
+"<br>Style : "+style+
+"<br>Langue : "+langue+
+"<br>Voix : "+voix+
+"<br>Ambiance : "+ambiance;
+
+document.getElementById("result").style.display="block";
+}
+</script>
+
+</body>
+                </html>
